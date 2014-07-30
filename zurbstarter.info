@@ -1,0 +1,31 @@
+name = Zurb Starter
+description = HTML5 Starter Theme based on zurb foundation
+package = Core
+version = 1.0
+core = 7.x
+
+;=======StyleSheets=========
+stylesheets[all][] = css/foundation.css
+;stylesheets[all][] = css/animate.css
+stylesheets[all][] = css/normalize.css
+stylesheets[all][] = css/style.css
+stylesheets[all][] = css/touchingHearts.css
+;stylesheets[print][] = css/print.css
+
+
+;========Regions=======
+regions[page_top] = Page Top
+regions[page_bottom] = Page Bottom
+regions[header] = Header
+regions[sidebar_first] = Sidebar First
+regions[sidebar_second] = Sidebar Second
+regions[content_pre] = Content pre
+regions[content] = Content
+regions[content_post] = Content Post
+regions[footer] = Footer
+regions[highlighted] = Highlighted
+
+;========General Scripts==========
+scripts[] = js/foundation.min.js
+scripts[] = js/vendor/modernizer.js
+scripts[] = js/scripts.js

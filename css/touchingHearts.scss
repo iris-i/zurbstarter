@@ -1,0 +1,195 @@
+/*For switching colorscheme*/
+
+/*===========Variables=================*/
+/*1. For TouchingHearts Scheme*/
+$yellowBackground: url(../images/yellow/yellowTexture.png);
+$redColor: #9A1F2D;
+$grayColor: #373838;
+$greenColor: /*#45A756;*/(saturate(#989E4F, 15%));
+$blueColor: #007898;
+$yellowColor: #FFC500;
+
+$headerImage: url("../images/front/gift.jpg");
+               /*url("../images/front/swing2.jpg");*/
+              
+
+/*Switching colors*/
+$defaultColor: $greenColor;
+$contrastColor: $blueColor;
+$highlightColor: $redColor;
+$lightFont: #ededed;
+
+/*General*/
+$border: 1px solid;
+$darkTexture: url("../images/bg/giftlyDark.png");
+$lightTexture: url("../images/bg/squares.png");
+$lightIconsBg: url("../images/bg/giftly.png");
+
+/*Fonts*/
+$defaultFont: 'Muli';
+$displayFont: 'Cinzel Decorative';
+
+
+/*============Mixins=========*/
+@mixin shadowEffect{
+   text-shadow: 4px 3px 0 (darken($defaultColor, 35%)), 9px 8px 0 rgba(0, 0, 0, 0.15); 
+}
+
+/*========Foundation Overrides===========*/
+/*1. General Elemments*/
+
+body{background: #fff; color: $grayColor; font-family: $defaultFont;}
+a{color:$defaultColor;}
+h1, h2, h3, h4, h5{color:$lightFont; font-family: $displayFont; font-weight: bold;}
+
+/*2. Classes*/
+
+.top-bar{
+    background: $grayColor;
+    .title-area{
+        .name h1 > a{background: $grayColor; border-right: $border #fff;}
+    }
+    .top-bar-section ul{
+        li.active > a {background: $grayColor;}
+        li a i{}
+    }
+}
+.top-bar-section li.active:not(.has-form) a:not(.button) {background: $highlightColor; color:#fff;}
+.top-bar-section li.active:hover:not(.has-form) a:not(.button) {background: $grayColor;}
+.top-bar-section li:not(.has-form) a:not(.button) {
+    background: $grayColor;}
+.top-bar-section li:not(.has-form) a:hover:not(.button) {color: $defaultColor; background: $grayColor;}
+
+/*================Header Section===========*/
+.headerWrapper{
+   background: $headerImage;
+   background-size: cover;
+   color: $lightFont;
+   
+}
+.logoArea{
+   img{margin: auto; display: block;}
+}
+
+/*========== Large Icons=========*/
+.largeIcons{
+  color:$lightFont;
+  @include shadowEffect;
+  a{
+   color: $lightFont;
+  }
+}
+
+.fa-effect-9 .fa:after{
+    box-shadow: 0 0 0 4px darken($blueColor, 10%);
+    &:hover{box-shadow: lighten($blueColor, 10%); }
+    }
+.no-touch .fa-effect-9a .fa:hover {
+	box-shadow: 0 0 0 10px $yellowColor;
+        -webkit-box-shadow: 0 0 0 10px $yellowColor;
+         -moz-box-shadow: 0 0 0 10px $yellowColor;
+	color: $lightFont;
+}
+
+/*==== General Classes=========*/
+.contrastBackground{
+    background: lighten($lightFont, 30%);
+}
+.darkTexture{
+    background: $darkTexture;
+}
+.lightTexture{
+   background: $lightTexture;
+}
+.darkBg{
+   background: $grayColor;
+}
+.blueBg{background: $blueColor;}
+.yellowBg{background: $yellowColor;}
+.redBg{background: desaturate((lighten($redColor, 10%)), 10%);}
+.lightIconsBg{
+   background: $lightIconsBg;
+}
+.collageBg{
+    background: url("../images/collage.png");
+}
+
+.grayShadow{
+       box-shadow: 0 1px 3px #999999;
+    -webkit-box-shadow: 0 1px 3px #999999;
+    -moz-box-shadow: 0 1px 3px #999999;
+}
+
+
+
+/*========Sections========*/
+.mainContent{
+    color: lighten($grayColor, 20%);
+    .postTeasers{
+      background: #fff;
+      padding: 4%;
+      /*border: 1px solid #ddd;*/
+      margin: auto;
+    }
+
+    h4{
+        color: $contrastColor;
+        border-bottom: 1px dashed #999999;
+        font-variant: small-caps;
+        font-family: $defaultFont;}
+    h2{
+        
+        text-align: center;
+    }
+}
+    aside{
+        /*background: $grayColor;*/
+        h5{color: $highlightColor;}
+        .categoriesSection{
+         text-align: center;
+         font-size: 0.8em;
+         
+         li{font-size: 0.9rem;}
+        }
+        img{
+            border: 5px solid #000;
+            
+        }
+    }
+
+
+footer{
+   
+   &.darkTexture{
+   background-color: darken($contrastColor, 20%);
+   color: #999;
+}
+    
+    ul[class*="block-grid-"]{
+        a{color: darken($contrastColor, 10%);
+         &:hover{color: $contrastColor;}
+        }
+    }
+    fieldset{border: 1px solid #222222;
+        legend{background: none;}
+        input[type="text"]{background: #000; border-color: #333;}
+    }
+    .vcard{border: 1px solid #222;}
+    blockquote{border-left: 1px solid #333333;}
+    
+
+}
+
+/*==========================GENERAL PAGES===============*/
+body.generalPage{
+   /*background: $lightIconsBg;*/
+   .mainContent .columns{margin: 0;}
+   
+}
+/*==============modules*/
+/*====Hero Section*/
+.section-link{
+   color: $highlightColor;
+}
+
+h5.hero-title{font-family: $defaultFont;}
